@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#CCd6d7d7"
+    android:padding="10dp"
+    android:layout_margin="5dp">
+
+    <TextView
+        android:id="@+id/match_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="9dp" />
+
+    <TextView
+        android:id="@+id/match_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/match_no"
+        android:layout_alignStart="@+id/match_no"
+        android:layout_below="@+id/match_no"
+        android:layout_marginTop="12dp" />
+
+    <TextView
+        android:id="@+id/match_team1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/match_no"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="6dp"
+        android:textAppearance="@style/TextAppearance.AppCompat" />
+
+    <TextView
+        android:id="@+id/match_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/match_date"
+        android:layout_alignStart="@+id/match_date"
+        android:layout_below="@+id/match_date"
+        android:layout_marginTop="12dp" />
+
+    <TextView
+        android:id="@+id/match_Venue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/match_time"
+        android:layout_alignStart="@+id/match_time"
+        android:layout_below="@+id/match_time"
+        android:layout_marginTop="14dp" />
+
+    <TextView
+        android:id="@+id/VS_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/match_date"
+        android:layout_alignBottom="@+id/match_date"
+        android:layout_centerHorizontal="true"
+        android:text="VS" />
+
+    <TextView
+        android:id="@+id/match_team2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/match_time"
+        android:layout_alignBottom="@+id/match_time"
+        android:layout_alignLeft="@+id/match_team1"
+        android:layout_alignStart="@+id/match_team1"
+        android:textAppearance="@style/TextAppearance.AppCompat" />
+
+</RelativeLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+    <group android:checkableBehavior="all">
+        <item
+            android:id="@+id/myteam"
+            android:icon="@drawable/ic_myteam_black_24dp"
+            android:title="@string/myteam" />
+        <item
+            android:id="@+id/profile_points"
+            android:icon="@drawable/ic_points_black_24dp"
+            android:title="@string/points" />
+        <item
+            android:id="@+id/transfers"
+            android:icon="@drawable/ic_transfer_arrows_black_24dp"
+            android:title="@string/transfers" />
+        <item
+            android:id="@+id/fixtures"
+            android:icon="@drawable/ic_fixtures_black_24dp"
+            android:title="@string/fixtures" />
+        <item
+            android:id="@+id/finance"
+            android:icon="@drawable/ic_finance_black_24dp"
+            android:title="@string/finance" />
+        <item
+            android:id="@+id/settings"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="@string/settings" />
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/ic_logout_black_24dp"
+            android:title="@string/log_out" />
+    </group>
+</menu>
+
+

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/profile_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/name"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/name"
+        android:layout_marginLeft="82dp"
+        android:layout_marginStart="82dp"
+        android:layout_marginTop="25dp"
+        android:scaleType="center"
+        app:srcCompat="@mipmap/ic_avatar" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/profile_image"
+        android:layout_marginLeft="39dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/name" />
+
+    <TextView
+        android:id="@+id/profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/name"
+        android:layout_marginLeft="31dp"
+        android:layout_marginStart="31dp"
+        android:layout_toEndOf="@+id/name"
+        android:layout_toRightOf="@+id/name" />
+
+
+    <TextView
+        android:id="@+id/age"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/name"
+        android:layout_marginTop="14dp"
+        android:layout_toLeftOf="@+id/profile_name"
+        android:layout_toStartOf="@+id/profile_name"
+        android:ems="10"
+        android:inputType="none"
+        android:text="@string/age" />
+
+    <TextView
+        android:id="@+id/profile_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/profile_name"
+        android:layout_alignStart="@+id/profile_name"
+        android:layout_alignTop="@+id/age" />
+    <TextView
+        android:id="@+id/role"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/age"
+        android:layout_marginTop="14dp"
+        android:layout_toLeftOf="@+id/profile_name"
+        android:layout_toStartOf="@+id/profile_name"
+        android:ems="10"
+        android:inputType="none"
+        android:text="@string/role" />
+
+    <TextView
+        android:id="@+id/profile_role"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/profile_name"
+        android:layout_alignStart="@+id/profile_name"
+        android:layout_alignTop="@+id/role" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/role"
+        android:layout_marginTop="14dp"
+        android:layout_toLeftOf="@+id/profile_name"
+        android:layout_toStartOf="@+id/profile_name"
+        android:ems="10"
+        android:inputType="none"
+        android:text="@string/price" />
+
+    <TextView
+        android:id="@+id/profile_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/profile_name"
+        android:layout_alignStart="@+id/profile_name"
+        android:layout_alignTop="@+id/price" />
+    <TextView
+        android:id="@+id/team"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/price"
+        android:layout_marginTop="14dp"
+        android:layout_toLeftOf="@+id/profile_name"
+        android:layout_toStartOf="@+id/profile_name"
+        android:ems="10"
+        android:inputType="none"
+        android:text="@string/team" />
+
+    <TextView
+        android:id="@+id/profile_team"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/profile_name"
+        android:layout_alignStart="@+id/profile_name"
+        android:layout_alignTop="@+id/team" />
+    <TextView
+        android:id="@+id/country"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/team"
+        android:layout_marginTop="14dp"
+        android:layout_toLeftOf="@+id/profile_name"
+        android:layout_toStartOf="@+id/profile_name"
+        android:ems="10"
+        android:inputType="none"
+        android:text="@string/country" />
+
+    <TextView
+        android:id="@+id/profile_country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/profile_name"
+        android:layout_alignStart="@+id/profile_name"
+        android:layout_alignTop="@+id/country" />
+
+</RelativeLayout>

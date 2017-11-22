@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "741721306261",
+    "firebase_url": "https://bpl-fantasy-league.firebaseio.com",
+    "project_id": "bpl-fantasy-league",
+    "storage_bucket": "bpl-fantasy-league.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:741721306261:android:298e3f53ffd11cf9",
+        "android_client_info": {
+          "package_name": "com.example.aap.bplfantasyleague"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "741721306261-2cgsn18eahq30pkoppliocmo8mgim0na.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aap.bplfantasyleague",
+            "certificate_hash": "682c87bf00660b182482846919b5bc5824a9277f"
+          }
+        },
+        {
+          "client_id": "741721306261-fkjksqc0svmao88kr2isihfqdisqbk45.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4-mKBYm_bv80Qdhtz4M7UnRsz0mMSoz8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "741721306261-fkjksqc0svmao88kr2isihfqdisqbk45.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
