@@ -25,9 +25,9 @@ public class Tab3 extends Fragment {
     private String mParam2;
     private OnFragmentInteractionListener mListener;
 
-
+    //DatabaseReference market= FirebaseDatabase.getInstance().getReference().child("Market");
     String userId;
-    RecyclerView sell_recycler;
+    RecyclerView transfer_recycler;
     ExpandableListView expandableListView;
 
     public String getUserId() {
@@ -62,9 +62,9 @@ public class Tab3 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tab3, container, false);
-        sell_recycler = view.findViewById(R.id.sell_recyclerview);
-        sell_recycler.setHasFixedSize(true);
-        sell_recycler.setLayoutManager(new LinearLayoutManager(this.getContext()));
+        transfer_recycler = view.findViewById(R.id.transfer_recycler_view);
+        transfer_recycler.setHasFixedSize(true);
+        transfer_recycler.setLayoutManager(new LinearLayoutManager(this.getContext()));
         return view;
     }
 
@@ -116,9 +116,15 @@ public class Tab3 extends Fragment {
             @Override
             protected void populateViewHolder(final Tab3.PlayerViewHolder viewHolder, final PlayerList model, final int position) {
                 viewHolder.setName(model.getName().toUpperCase());
+                viewHolder.mView.findViewById(R.id.sell_profile_button).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                });
             }
         };
-        sell_recycler.setAdapter(firebaseRecyclerAdapter);
+        transfer_recycler.setAdapter(firebaseRecyclerAdapter);
     }
     public static class PlayerViewHolder extends RecyclerView.ViewHolder{
         final View mView;

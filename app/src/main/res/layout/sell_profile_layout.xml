@@ -19,17 +19,6 @@
         android:layout_marginStart="22dp"
         android:textAppearance="@style/TextAppearance.AppCompat" />
 
-    <EditText
-        android:id="@+id/sell_profile_price"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/sell_profile_name"
-        android:layout_alignBottom="@+id/sell_profile_name"
-        android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:hint="PRICE"
-        android:inputType="number" />
-
     <Button
         android:id="@+id/sell_profile_button"
         android:layout_width="wrap_content"
@@ -37,5 +26,5 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:text="SELL" />
+        android:text="TRANSFER" />
 </RelativeLayout>
