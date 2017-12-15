@@ -12,12 +12,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.aap.bplfantasyleague.control.ProfileActivity;
 import com.example.aap.bplfantasyleague.R;
+import com.example.aap.bplfantasyleague.control.ProfileActivity;
 import com.example.aap.bplfantasyleague.model.PlayerList;
+import com.example.aap.bplfantasyleague.utility.Converter;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 
 public class Tab1 extends Fragment {
@@ -29,6 +40,7 @@ public class Tab1 extends Fragment {
     RecyclerView recyclerView;
     DatabaseReference udref;
     String userId;
+    BarChart barChart;
     private OnFragmentInteractionListener mListener;
 
     public void setUserId(String userId){
@@ -63,8 +75,58 @@ public class Tab1 extends Fragment {
         View tab1_view = inflater.inflate(R.layout.fragment_tab1, container, false);
         recyclerView = tab1_view.findViewById(R.id.myteam_view);
         recyclerView.setHasFixedSize(true);
+        udref= FirebaseDatabase.getInstance().getReference().child("USERS").child(userId)
+                .child("Team").child("Players");
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
+        barChart = tab1_view.findViewById(R.id.my_team_graph);
         return tab1_view;
+    }
+    public void setGraphView(){
+        final ArrayList<String> Names = new ArrayList<>();
+        final ArrayList<BarEntry> barEntries = new ArrayList<>();
+        udref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                int x = 0;
+                boolean exists = true;
+                for(DataSnapshot playerKey: dataSnapshot.getChildren()){
+                    String fullName = playerKey.child("Name").getValue().toString();
+                    String firstName = new Converter().toFirstName(fullName);
+                    Names.add(firstName);
+                    int totalScore = 0;
+                    if(!playerKey.child("Scores").exists()){
+                        exists = false;break;
+                    }
+                    else {
+                        for(DataSnapshot p : playerKey.child("Scores").getChildren()){
+                            totalScore+= Integer.parseInt(p.getValue().toString());
+                        }
+                        barEntries.add(new BarEntry(x,totalScore));
+                        x++;
+                    }
+
+                }
+                if(exists == true){
+                    final BarDataSet barDataSet = new BarDataSet(barEntries,"TOTAL SCORES");
+                    final BarData barData = new BarData(barDataSet);
+                    barChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(Names));
+                    barDataSet.setDrawValues(true);
+                    barChart.setDescription(null);
+                    barChart.animateY(1000);
+                    barChart.setDrawValueAboveBar(false);
+                    barChart.setData(barData);
+                    barChart.invalidate();
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
     }
 
     public void onButtonPressed(Uri uri) {
@@ -98,8 +160,6 @@ public class Tab1 extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        udref= FirebaseDatabase.getInstance().getReference().child("USERS").child(userId)
-                .child("Team").child("Players");
         FirebaseRecyclerAdapter<PlayerList,Tab1.PlayerViewHolder>
                 firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<PlayerList, Tab1.PlayerViewHolder>(
                 PlayerList.class,
@@ -126,6 +186,8 @@ public class Tab1 extends Fragment {
             }
         };
         recyclerView.setAdapter(firebaseRecyclerAdapter);
+        setGraphView();
+
     }
 
 

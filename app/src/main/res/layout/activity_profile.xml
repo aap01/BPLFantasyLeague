@@ -140,5 +140,14 @@
         android:layout_alignLeft="@+id/profile_name"
         android:layout_alignStart="@+id/profile_name"
         android:layout_alignTop="@+id/country" />
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/activity_profile_graph"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/country"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"></com.github.mikephil.charting.charts.BarChart>
 
 </RelativeLayout>

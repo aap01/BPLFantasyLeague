@@ -3,11 +3,7 @@
     android:id="@+id/myteam_snap"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="1dp"
-    android:background="#d5d6d6"
-    android:padding="5dp"
-    android:paddingBottom="8dp"
-    android:layout_margin="5dp">
+    android:background="@drawable/layout_border">
 
     <TextView
         android:id="@+id/myteam_snap_name"
