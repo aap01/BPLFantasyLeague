@@ -165,7 +165,6 @@
     <string name="_100m_dollar">100m $</string>
     <string name="todo">TODO</string>
     <string name="age">AGE</string>
-    <string name="team">TEAM</string>
     <string name="country">COUNTRY</string>
     <string name="textview">TextView</string>
     <string name="this_is_not_a_transfer_session_text">THIS IS NOT A TRANSFER SESSION</string>
@@ -173,6 +172,11 @@
     <string name="price">PRICE</string>
     <string name="name">NAME</string>
     <string name="role">ROLE</string>
+    <string name="totalscore">TOTALSCORE</string>
+    <string name="team">TEAM</string>
+    <string name="rank">RANK</string>
+    <string name="owner">OWNER</string>
+    <string name="score">SCORE</string>
 
 
 </resources>

@@ -41,6 +41,7 @@ public class Tab1 extends Fragment {
     DatabaseReference udref;
     String userId;
     BarChart barChart;
+    TextView textView;//------------for total score----------//
     private OnFragmentInteractionListener mListener;
 
     public void setUserId(String userId){
@@ -78,6 +79,7 @@ public class Tab1 extends Fragment {
         udref= FirebaseDatabase.getInstance().getReference().child("USERS").child(userId)
                 .child("Team").child("Players");
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
+        textView = tab1_view.findViewById(R.id.my_team_totalscore);
         barChart = tab1_view.findViewById(R.id.my_team_graph);
         return tab1_view;
     }
@@ -116,6 +118,19 @@ public class Tab1 extends Fragment {
                     barChart.setDrawValueAboveBar(false);
                     barChart.setData(barData);
                     barChart.invalidate();
+                    FirebaseDatabase.getInstance().getReference().child("USERS").child(userId).child("TotalScore")
+                    .addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            String totalscore = dataSnapshot.getValue().toString();
+                            textView.setText(totalscore);
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
                 }
 
             }

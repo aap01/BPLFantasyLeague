@@ -41,6 +41,7 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
                 return tab1;
             case 1:
                 Tab2 tab2 = new Tab2();
+                tab2.setUserId(userId);
                 return tab2;
             case 2:
                 Tab3 tab3 = new Tab3();
@@ -48,9 +49,11 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
                 return tab3;
             case 3:
                 Tab4 tab4 = new Tab4();
+                tab4.setUserId(userId);
                 return tab4;
             case 4:
                 Tab5 tab5 = new Tab5();
+                tab5.setUserId(userId);
                 return tab5;
         }
         return null;

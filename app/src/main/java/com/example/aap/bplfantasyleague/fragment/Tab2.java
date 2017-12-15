@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 
 import com.example.aap.bplfantasyleague.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
@@ -27,6 +29,8 @@ public class Tab2 extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     private String mParam1;
     private String mParam2;
+    String userId;
+    DatabaseReference udref;
 
     List<String> players;
     ExpandableListView expandableListView;
@@ -55,10 +59,17 @@ public class Tab2 extends Fragment {
         }
     }
 
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tab2,container,false);
+        udref= FirebaseDatabase.getInstance().getReference().child("USERS").child(userId)
+                .child("Team").child("Players");
+
         return view;
     }
 

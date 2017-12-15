@@ -13,11 +13,12 @@
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="18dp"
-        android:layout_marginStart="18dp" />
+        android:layout_marginStart="18dp" android:textSize="10dp"/>
 
     <TextView
         android:id="@+id/myteam_snap_role"
         android:layout_width="80dp"
+        android:textSize="8dp"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/myteam_snap_name"
         android:layout_alignBottom="@+id/myteam_snap_name"
@@ -29,6 +30,7 @@
     <TextView
         android:id="@+id/myteam_snap_point"
         android:layout_width="80dp"
+        android:textSize="10dp"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/myteam_snap_role"
         android:layout_alignBottom="@+id/myteam_snap_role"

@@ -25,6 +25,11 @@ public class Tab4 extends Fragment {
 
     private String mParam1;
     private String mParam2;
+    String userId;
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 
     private FirebaseUser firebaseUser;
     private DatabaseReference databaseReference;
